@@ -1,2 +1,1 @@
-today is 29 april 2020
-rescan 29 april 2020
+today is 25 July 2020
