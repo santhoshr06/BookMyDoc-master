@@ -26,7 +26,12 @@ public class dBase {
 	public ResultSet executeQuery(String q) throws SQLException {
 		//results = statement.executeQuery(q);
 
-		PreparedStatement preparedStatement = connection.prepareStatement(q);
+		String selectSQL = "SELECT name, secret FROM users WHERE ispublic = 'true' AND name = ? AND password = ?";
+
+		PreparedStatement preparedStatement = connection.prepareStatement(selectSQL);
+		preparedStatement.setString(1, "name");
+		preparedStatement.setString(2, "password");
+
 		results = preparedStatement.executeQuery();
 
 		return results;
