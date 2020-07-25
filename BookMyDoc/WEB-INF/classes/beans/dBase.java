@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import java.sql.PreparedStatement;
+
 public class dBase {
 
 	private Connection connection;
@@ -22,7 +24,11 @@ public class dBase {
 	}
 
 	public ResultSet executeQuery(String q) throws SQLException {
-		results = statement.executeQuery(q);
+		//results = statement.executeQuery(q);
+
+		PreparedStatement preparedStatement = connection.prepareStatement(q);
+		results = preparedStatement.executeQuery();
+
 		return results;
 	}
 
