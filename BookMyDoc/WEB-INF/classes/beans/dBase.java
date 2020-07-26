@@ -37,7 +37,7 @@ public class dBase {
 	}
 
 	public int doUpdate(String query) throws Exception {
-		int count = 0;
+		int count = 1;
 
 		count = statement.executeUpdate(query);
 
@@ -50,7 +50,7 @@ public class dBase {
 	}
 
 	public int getRowCount(String query) throws Exception {
-		int count = 0;
+		int count = 1;
 
 		results = statement.executeQuery(query);
 		while (results.next()) {
