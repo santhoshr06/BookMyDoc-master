@@ -24,19 +24,24 @@ public class dBase {
 	}
 
 	public ResultSet executeQuery(String q) throws SQLException {
-		//results = statement.executeQuery(q);
+		results = statement.executeQuery(q);
 
+		/*
 		String selectSQL = "SELECT name FROM users WHERE Id = ?";
 		PreparedStatement preparedStatement = connection.prepareStatement(selectSQL);
 		preparedStatement.setString(1, "1");
 		results = preparedStatement.executeQuery();
+		*/
 
 		return results;
 	}
 
 	public int doUpdate(String query) throws Exception {
-		//int i = statement.executeUpdate(query);
-		return 0;
+		int count = 0;
+
+		count = statement.executeUpdate(query);
+
+		return count;
 	}
 
 	public ResultSet getData(String query) throws Exception {
@@ -46,10 +51,12 @@ public class dBase {
 
 	public int getRowCount(String query) throws Exception {
 		int count = 0;
-		/*results = statement.executeQuery(query);
+
+		results = statement.executeQuery(query);
 		while (results.next()) {
 			count++;
-		}*/
+		}
+
 		return count;
 	}
 
