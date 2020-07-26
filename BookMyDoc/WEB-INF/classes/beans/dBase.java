@@ -26,12 +26,14 @@ public class dBase {
 	public ResultSet executeQuery(String q) throws SQLException {
 
 		/*vulnerable code*/
-		//results = statement.executeQuery(q);
+		results = statement.executeQuery(q);
 
+		/*
 		String selectSQL = "SELECT name FROM users WHERE Id = ?";
 		PreparedStatement preparedStatement = connection.prepareStatement(selectSQL);
 		preparedStatement.setString(1, "1");
 		results = preparedStatement.executeQuery();
+		*/
 
 		return results;
 	}
@@ -40,7 +42,7 @@ public class dBase {
 		int count = 1;
 
 		/*vulnerable code*/
-		//count = statement.executeUpdate(query);
+		count = statement.executeUpdate(query);
 
 		return count;
 	}
@@ -55,12 +57,12 @@ public class dBase {
 		int count = 1;
 
 		/*vulnerable code*/
-		/*
+
 		results = statement.executeQuery(query);
 		while (results.next()) {
 			count++;
 		}
-		*/
+
 
 		return count;
 	}
